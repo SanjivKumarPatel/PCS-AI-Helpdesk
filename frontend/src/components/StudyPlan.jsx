@@ -19,7 +19,7 @@ const StudyPlan = ({ studyPlan }) => {
         {studyPlan.map((day) => (
           <div
             key={day.day}
-            className='rounded-2xl border border-gray-800 bg-gray-900 p-5 transition hover:border-gray-700'
+            className='rounded-2xl border border-gray-400 bg-gray-900 p-5 transition hover:border-gray-50'
           >
             <div className='flex flex-col gap-4 sm:flex-row sm:items-start'>
               <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-sm font-bold'>

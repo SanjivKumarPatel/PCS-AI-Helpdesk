@@ -2,7 +2,7 @@ import { ExternalLink, Play } from 'lucide-react'
 
 const ResourceCard = ({ video }) => {
   return (
-    <div className='overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 transition hover:border-gray-700 hover:-translate-y-1'>
+    <div className='overflow-hidden rounded-2xl border border-gray-400 bg-gray-900 transition hover:border-gray-50 hover:-translate-y-1'>
       <img
         src={video.thumbnail}
         alt={video.title}

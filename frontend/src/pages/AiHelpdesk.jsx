@@ -42,7 +42,7 @@ const AiHelpdesk = () => {
   }
 
   return (
-    <main className='min-h-screen bg-gray-950 px-4 py-10 text-white sm:px-6'>
+    <main className='min-h-screen bg-gradient-to-b from-gray-950 to-indigo-600 px-4 py-10 text-white sm:px-6'>
       <div className='mx-auto max-w-4xl'>
         <div className='mb-10 text-center'>
           <div className='mb-4 inline-flex items-center gap-2 rounded-full border border-gray-800 bg-gray-900 px-4 py-2 text-sm text-gray-300'>
@@ -54,7 +54,7 @@ const AiHelpdesk = () => {
             PCS AI Helpdesk
           </h1>
 
-          <p className='mx-auto mt-4 max-w-2xl text-gray-400'>
+          <p className='mx-auto mt-4 max-w-2xl text-gray-300'>
             Enter a topic and get a practical 7-day learning plan with useful
             YouTube resources.
           </p>
@@ -96,7 +96,7 @@ const AiHelpdesk = () => {
             )}
 
             {result.studyTips?.length > 0 && (
-              <section className='mt-10 rounded-2xl border border-gray-800 bg-gray-900 p-6'>
+              <section className='mt-10 rounded-2xl border border-gray-100 bg-gray-900 p-6'>
                 <h2 className='text-xl font-bold text-white'>AI Study Tips</h2>
 
                 <ul className='mt-4 space-y-3'>
