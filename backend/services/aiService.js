@@ -20,12 +20,32 @@ export const generateAIStudyPlan = async (topic) => {
     - Be useful for self-study
     - Avoid unnecessary or unrelated topics
 
-    Also generate:
-    - 3 useful search queries for finding high-quality learning websites
-    - 3 useful study tips
+    Also provide a few useful study tips.
 
     Do not provide website URLs or YouTube URLs.
-    Only provide search queries that can be used to find relevant resources.
+
+    Return only valid JSON using the following structure:
+    {
+      "studyPlan": [
+        {
+          "day": 1,
+          "title": "Topic title",
+          "topics": [
+            "Concept 1",
+            "Concept 2"
+          ],
+          "activities": [
+            "Activity 1",
+            "Activity 2"
+          ]
+        }
+      ],
+      "studyTips": [
+        "Tip 1",
+        "Tip 2",
+        "Tip 3"
+      ]
+    }
   `
 
   const response = await groq.chat.completions.create({
@@ -33,7 +53,7 @@ export const generateAIStudyPlan = async (topic) => {
     messages: [
       {
         role: 'system',
-        content: 'You are an expert AI study planner. Return only structured JSON data.'
+        content: 'You are an expert AI study planner. Return only valid JSON.'
       },
       {
         role: 'user',
@@ -76,12 +96,6 @@ export const generateAIStudyPlan = async (topic) => {
                 additionalProperties: false
               }
             },
-            resourceQueries: {
-              type: 'array',
-              items: {
-                type: 'string'
-              }
-            },
             studyTips: {
               type: 'array',
               items: {
@@ -89,7 +103,7 @@ export const generateAIStudyPlan = async (topic) => {
               }
             }
           },
-          required: ['studyPlan', 'resourceQueries', 'studyTips'],
+          required: ['studyPlan', 'studyTips'],
           additionalProperties: false
         }
       }
