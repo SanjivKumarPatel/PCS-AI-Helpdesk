@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/ai', aiRouter)
 
 app.get('/', (req, res) => {
-  return res.status(200).json({ success: true, message: 'PCS AI Helpdesk API is running' })
+  return res.status(200).json({ success: true, message: 'StudyMap AI API is running' })
 })
 
 app.listen(PORT, '0.0.0.0', () => {
