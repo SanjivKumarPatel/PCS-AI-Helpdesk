@@ -1,7 +1,7 @@
-import AiHelpdesk from './pages/AiHelpdesk.jsx'
+import StudyMap from './pages/StudyMap.jsx'
 
 const App = () => {
-  return <AiHelpdesk />
+  return <StudyMap />
 }
 
 export default App

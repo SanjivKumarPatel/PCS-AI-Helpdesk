@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { Sparkles } from 'lucide-react'
 
 import StudyForm from '../components/StudyForm.jsx'
-import { generateStudyPlan } from '../services/api.js'
 import StudyPlan from '../components/StudyPlan.jsx'
 import ResourceCard from '../components/ResourceCard.jsx'
+import { generateStudyPlan } from '../services/api.js'
 
-const AiHelpdesk = () => {
+const StudyMap = () => {
   const [topic, setTopic] = useState('')
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState(null)
@@ -26,7 +26,7 @@ const AiHelpdesk = () => {
 
     try {
       const response = await generateStudyPlan({
-        topic: topic.trim(),
+        topic: topic.trim()
       })
 
       setResult(response.data.data)
@@ -34,7 +34,7 @@ const AiHelpdesk = () => {
       console.error('Study plan error:', error.message)
 
       setError(
-        error.response?.data?.message || 'Failed to generate study plan',
+        error.response?.data?.message || 'Failed to generate study plan'
       )
     } finally {
       setLoading(false)
@@ -51,7 +51,7 @@ const AiHelpdesk = () => {
           </div>
 
           <h1 className='text-4xl font-bold tracking-tight sm:text-5xl'>
-            PCS AI Helpdesk
+            StudyMap AI
           </h1>
 
           <p className='mx-auto mt-4 max-w-2xl text-gray-300'>
@@ -89,7 +89,10 @@ const AiHelpdesk = () => {
 
                 <div className='grid gap-5 md:grid-cols-2'>
                   {result.videos.map((video, index) => (
-                    <ResourceCard key={video.url || index} video={video} />
+                    <ResourceCard
+                      key={video.url || index}
+                      video={video}
+                    />
                   ))}
                 </div>
               </section>
@@ -97,11 +100,16 @@ const AiHelpdesk = () => {
 
             {result.studyTips?.length > 0 && (
               <section className='mt-10 rounded-2xl border border-gray-100 bg-gray-900 p-6'>
-                <h2 className='text-xl font-bold text-white'>AI Study Tips</h2>
+                <h2 className='text-xl font-bold text-white'>
+                  AI Study Tips
+                </h2>
 
                 <ul className='mt-4 space-y-3'>
                   {result.studyTips.map((tip, index) => (
-                    <li key={index} className='text-sm leading-6 text-gray-400'>
+                    <li
+                      key={index}
+                      className='text-sm leading-6 text-gray-400'
+                    >
                       💡 {tip}
                     </li>
                   ))}
@@ -115,4 +123,4 @@ const AiHelpdesk = () => {
   )
 }
 
-export default AiHelpdesk
+export default StudyMap
