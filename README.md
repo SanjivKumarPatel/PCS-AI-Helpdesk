@@ -67,7 +67,6 @@ StudyMap AI uses **Groq AI** to generate structured study plans and the **YouTub
 
 ```text
 StudyMap-AI/
-│
 ├── backend/
 │   ├── config/
 │   │   └── ai.js
@@ -83,25 +82,17 @@ StudyMap-AI/
 │   ├── package-lock.json
 │   └── server.js
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── StudyForm.jsx
-│   │   │   ├── StudyPlan.jsx
-│   │   │   └── ResourceCard.jsx
-│   │   ├── pages/
-│   │   │   └── AiHelpdesk.jsx
-│   │   ├── services/
-│   │   │   └── api.js
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── package.json
-│   ├── package-lock.json
-│   └── vite.config.js
-│
-├── .gitignore
-└── README.md
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   │   ├── StudyForm.jsx
+    │   │   ├── StudyPlan.jsx
+    │   │   └── ResourceCard.jsx
+    │   ├── pages/
+    │   │   └── AiHelpdesk.jsx
+    │   └── services/
+    │
+    └── package.json
 ```
 
 ---
