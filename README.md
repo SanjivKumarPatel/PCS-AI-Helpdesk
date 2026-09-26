@@ -66,7 +66,6 @@ StudyMap AI uses **Groq AI** to generate structured study plans and the **YouTub
 ## 📁 Project Structure
 
 ```text
-
 StudyMap-AI/
 │
 ├── backend/
@@ -103,7 +102,7 @@ StudyMap-AI/
 │
 ├── .gitignore
 └── README.md
-````
+```
 
 ---
 
